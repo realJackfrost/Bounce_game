@@ -1,0 +1,1 @@
+# j'appelle mur tout ce qui peut empecher la balle d'avancer, grand mur tout à gauche de la fenetre comme un petit bloc juste pour forcer le joueur à sauter, il en est tout autant pour le sol et le plafond
