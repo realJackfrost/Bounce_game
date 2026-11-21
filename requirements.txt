@@ -1,1 +1,4 @@
 #Nous allons lister les dépendances du projet ici, comme ça on pourra tous exécuter les différents éléments chez nous 
+
+pygame==2.6.1
+pytest>=7.0
