@@ -47,7 +47,7 @@ while running:
     )
 
      def verifier_collision(self, balle):
-      balle_rect = pygame.Rect(
+        balle_rect = pygame.Rect()
         balle.position.x - balle.rayon,
         balle.position.y - balle.rayon,
         balle.rayon * 2,

@@ -5,7 +5,7 @@
 #on suivra le meme process pour tous les elements du jeu cad un fichier .py avec le nom dans lequel on créra une classe les attributs et les méthodes
 
 # La balle doit pouvoir sauter,
-#  aller à gauche ou à droite, 
+# aller à gauche ou à droite, 
 # flotter dans une certaine zone "avec de l'eau" (et coller au plafond dans un zone sans graviter on verra après)
 # Changer de forme un petit peu plus grosse (moins lourde qui flottera sur l'eau) ou plus petite plus lourde (qui coulera au fond de l'eau)
 # Revenir à un check point si elle touche un danger
@@ -13,16 +13,19 @@
 
 import pygame
 
+#faire des vies 
 
 class Balle:
     """La balle du joueur : elle sait agir, la boucle de jeu décide quand."""
 
-    def __init__(self, x, y, rayon=40, couleur=(200,30,150)):
+    def __init__(self, x, y, rayon=40, couleur=(200,30,150), hp = 3):
         self.position = pygame.Vector2(x, y)
+        self.point_depart = pygame.Vector2(x, y) # pour fixer le point de départ et l'utiliser dans le reset après la perte d'HP
         self.vitesse = pygame.Vector2(0, 0)      # pixels par seconde (x et y)
         self.rayon = rayon
         self.couleur = couleur
         self.est_au_sol = False
+        self.hp = hp
 
         # Réglages (Valeurs pour les tests)
         self.vitesse_marche = 300
@@ -93,3 +96,13 @@ class Balle:
 
     def dessiner(self, ecran):
         pygame.draw.circle(ecran, self.couleur, self.position, self.rayon)
+
+    #----------------------Gestion des vies et reset ---------------------------------
+
+    def perdre_hp(self, degats = 1):
+        if  ():
+            self.hp -= degats
+            self.position = self.point_depart
+            self.vitesse = pygame.Vector2(0,0)
+            self.est_au_sol = False
+
