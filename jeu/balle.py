@@ -99,10 +99,16 @@ class Balle:
 
     #----------------------Gestion des vies et reset ---------------------------------
 
-    def perdre_hp(self, degats = 1):
-        if  ():
-            self.hp -= degats
-            self.position = self.point_depart
-            self.vitesse = pygame.Vector2(0,0)
-            self.est_au_sol = False
+    def perdre_hp(self, obstacle_sommet):
+        #if  obstacle_sommet.verifier_collision(self):
+        print("perdre_hp appelée, hp =", self.hp)
+        self.hp -= obstacle_sommet.degats
+        self.reset()
+
+#----------------Avec les check point on va enlever reset de là et l'utiliser seulement si la balle n'a plus de vie
+
+    def reset(self):
+        self.position = self.point_depart.copy()
+        self.vitesse = pygame.Vector2(0,0)
+        self.est_au_sol = False
 
